@@ -75,7 +75,7 @@ while True:
         mixer.setvolume(volume)
         print('Volume-', volume)
 
-    if dY <= -40:
+    if dY <= -50:
         volume += 1
         mixer.setvolume(volume)
         print('Volume+', volume)
@@ -94,13 +94,13 @@ while True:
         counter += 1
     if key == ord("q"):
         break
-    if key == ord("a"):
-        image_count += 1
-        frames.append(img)
-        print("Adding new image:", image_count)
+    # if key == ord("a"):
+    #     image_count += 1
+    #     frames.append(img)
+    #     print("Adding new image:", image_count)
 
-import imageio
-with imageio.get_writer("gif.gif", mode="I") as writer:
-    for idx, frame in enumerate(frames):
-        print("Adding frame to GIF file: ", idx + 1)
-        writer.append_data(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+# import imageio
+# with imageio.get_writer("gif.gif", mode="I") as writer:
+#     for idx, frame in enumerate(frames):
+#         print("Adding frame to GIF file: ", idx + 1)
+#         writer.append_data(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
